@@ -13,6 +13,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "phase2" / "apple_vision_ocr" / "main.swift"
+KNOWN_SUCCESS_STDERR_LINES = {
+    "IOServiceMatchingfailed for: AppleM2ScalerParavirtDriver",
+}
 
 
 def _png_chunk(kind: bytes, payload: bytes) -> bytes:
@@ -179,7 +182,12 @@ class AppleVisionOCRHelperTests(unittest.TestCase):
             self.fail(f"Unexpected Vision failure: {error}")
 
         payload = json.loads(result.stdout)
-        self.assertEqual(result.stderr, "")
+        unexpected_stderr = [
+            line
+            for line in result.stderr.splitlines()
+            if line and line not in KNOWN_SUCCESS_STDERR_LINES
+        ]
+        self.assertEqual(unexpected_stderr, [])
         self.assertEqual(
             set(payload), {"protocol", "engine", "observations"}
         )

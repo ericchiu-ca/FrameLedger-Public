@@ -23,6 +23,8 @@
 ### Fixed
 
 - 无业务代码修复；本区域只记录公开候选整理和治理变化。
+- Apple Vision helper 成功 smoke test 仅忽略 GitHub macOS runner 固定输出的
+  `AppleM2ScalerParavirtDriver` 系统诊断；其他非空 `stderr` 仍会失败。
 
 ### Removed
 

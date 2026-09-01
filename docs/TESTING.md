@@ -38,7 +38,7 @@ python scripts/check_public_snapshot.py
 | 门禁 | 结果 |
 |---|---|
 | `uv lock --check` | 通过；解析 9 个 main package |
-| 全量 unittest | 167 个测试通过；0 failure/error；2 skip；6.814 秒 |
+| 全量 unittest | 167 个测试通过；0 failure/error；2 skip；6.772 秒 |
 | Skip 原因 | 当前沙箱不提供 Apple Vision runtime 和 loopback socket；不是通过证明 |
 | CLI help | 通过；显示 13 个子命令 |
 | Build | `frameledger-0.1.0-py3-none-any.whl` 与 `frameledger-0.1.0.tar.gz` 构建成功 |
