@@ -34,6 +34,8 @@
 
 - 保留源视频只读、输出不覆盖、模型离线、loopback-only 和 fail-closed 安全政策。
 - GitHub Private Vulnerability Reporting URL 已绑定 `ericchiu-ca/FrameLedger-Public`；启用和端到端测试结果须另行验证。
+- 公开仓库已启用 Private Vulnerability Reporting，API 回读为 enabled，且无登录页面显示
+  `Report a vulnerability`；独立非协作者的实际提交/接收仍待人工验证。
 
 ## [0.1.0] - 尚未发布的 research preview
 

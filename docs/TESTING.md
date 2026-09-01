@@ -31,7 +31,7 @@ python scripts/check_public_snapshot.py
 
 ## 3. 公开候选验证快照
 
-生成日期：2026-09-01。Package version：`0.1.0`。本候选尚无 commit 或 tag。
+生成日期：2026-09-01。Package version：`0.1.0`。公开历史从 root commit `1d7d37265ad96202649584153d2efa8389598d67` 开始；当前没有 tag 或 Release。
 
 本地候选验证结果：
 
@@ -49,8 +49,12 @@ python scripts/check_public_snapshot.py
 | License inventory | 8 个 main、35 个 ASR、合计 39 个唯一 locked package 一致 |
 | 文档链接 | 12 个 Markdown 文件中的 26 个本地链接均有效 |
 | Workflow syntax | 两个 YAML 文件均可解析 |
+| Git history | Gitleaks v8.30.1 完整 history scan：no leaks found |
+| Hosted CI | [CI run 33527890487](https://github.com/ericchiu-ca/FrameLedger-Public/actions/runs/33527890487) 成功；Python 3.12/3.13 matrix 均通过 |
+| Hosted Security | [Security run 33527890473](https://github.com/ericchiu-ca/FrameLedger-Public/actions/runs/33527890473) 成功 |
+| PVR | API enabled；无登录 advisories 页面显示 `Report a vulnerability`，新报告地址返回登录跳转 |
 
-候选 repository 仍是 0 commit，因此当前不存在可供 Gitleaks 扫描的 Git history；首个 commit 形成后必须补做 `gitleaks git --log-opts=--all .`。GitHub hosted CI 也必须在未来目标仓库中另行取得 run 证据。
+PVR 的独立提交/接收仍未完成：本机保存的两个 `gh` 登录记录实际都解析为所有者账号 `ericchiu-ca`；所有者通过 private-report endpoint 自报被 GitHub 正确拒绝为 HTTP 403，且没有创建 advisory。需要一个真正独立、无仓库权限的 GitHub 账号补做此门禁。
 
 依赖审计的 `--no-deps` 依赖两份输入已完整锁定这一前提；ASR lock 尚未记录下载 hash，见发布文档中的人工门禁。
 

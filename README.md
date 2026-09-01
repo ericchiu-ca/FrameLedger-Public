@@ -137,7 +137,8 @@ python scripts/check_public_snapshot.py
 - 变量帧率视频使用 nominal FPS 时间戳，可能与逐帧 presentation timestamp 有差异；
 - OCR、ASR、路由和章节输出属于有边界的研究证据，不构成金融事实或投资结论；
 - GitHub Actions 尚未在这个新候选仓库中运行；
-- GitHub Actions 和 Private Vulnerability Reporting 仍需在新公开仓库中取得验证证据。
+- GitHub Actions CI/Security 已在公开仓库通过；PVR 已启用并确认公开报告入口可见，
+  但仍需真正独立的非协作者账号完成一次提交/接收测试。
 
 ## 文档
 

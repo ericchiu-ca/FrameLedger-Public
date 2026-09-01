@@ -103,4 +103,4 @@ Swift 和 MLX helper 使用严格 JSON-over-stdio protocol；主 Python 环境�
 5. 变量帧率源使用 nominal FPS，不是逐帧 presentation timestamp；
 6. table/presentation/router 缺少公开 blind holdout；OCR/ASR 锚点不是整体准确率；
 7. Hatchling build backend 未限制版本；ASR lock 固定版本但没有 hash；
-8. 已采用 MIT License；PVR URL 和 GitHub 设置仍必须在目标公开仓库中验证。
+8. 已采用 MIT License；PVR 已启用且公开入口可见，但独立非协作者提交/接收仍需人工验证。

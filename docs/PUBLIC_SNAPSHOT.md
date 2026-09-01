@@ -2,7 +2,7 @@
 
 ## 1. 状态
 
-本目录是 2026-09-01 建立的**本地公开候选**，不是已发布仓库。它有意不复制来源仓库的 `.git` 历史，并已初始化为一个没有 commit 的独立 Git repository。
+本目录是 2026-09-01 建立并发布到 `ericchiu-ca/FrameLedger-Public` 的**干净公开快照**。它有意不复制来源私有仓库的 `.git` 历史；公开历史从 root commit `1d7d37265ad96202649584153d2efa8389598d67` 开始。
 
 候选目标是保留可审阅、可测试的软件实现，同时不公开真实研究素材或来源绑定信息。
 
@@ -49,10 +49,10 @@
 | 门禁 | 当前状态 |
 |---|---|
 | 项目 `LICENSE` | MIT；`LICENSE` 与 package metadata 已一致 |
-| Git 历史 | 已初始化为空 repository；没有 commit、tag 或 remote；首个 commit 后才能扫描完整历史 |
-| Hosted CI | 未运行 |
-| PVR URL | 已设置为 `ericchiu-ca/FrameLedger-Public`；仓库建立并启用 PVR 后才能验证 |
-| PVR 端到端 | 目标仓库 public 后才能启用和测试 |
+| Git 历史 | 独立 `main`，只含公开快照历史；完整 history Gitleaks scan 已通过；没有 tag 或 Release |
+| Hosted CI | CI run `33527890487` 与 Security run `33527890473` 通过 |
+| PVR URL | 已设置并绑定 `ericchiu-ca/FrameLedger-Public` |
+| PVR 端到端 | API `enabled: true`；无登录页面显示报告入口并正确跳转登录；独立非协作者提交/接收仍待验证 |
 | Native/真实视频 | Apple Vision、MLX、FFmpeg、完整 workflow 和 UI 文件授权仍需人工验证 |
 | 法律/权利 | 自有代码权属、依赖、模型、FFmpeg 和未来公开 fixture 仍需人工确认 |
 
@@ -68,7 +68,7 @@ UV_CACHE_DIR=/tmp/frameledger-public-cache uv run --frozen \
 UV_CACHE_DIR=/tmp/frameledger-public-cache uv run --frozen frameledger --help
 ```
 
-本地构建、isolated wheel、Gitleaks working-tree scan 和两套 dependency audit 的实测结果记录在 [TESTING.md](TESTING.md)。未来首个 commit 形成后仍须执行 Git history scan；不能把来源私有仓库的结果当作本候选结果。
+本地构建、isolated wheel、Gitleaks working-tree/history scan 和两套 dependency audit 的实测结果记录在 [TESTING.md](TESTING.md)。不能把来源私有仓库的结果当作本公开快照结果。
 
 ## 7. 发布顺序
 
@@ -76,7 +76,7 @@ UV_CACHE_DIR=/tmp/frameledger-public-cache uv run --frozen frameledger --help
 2. 核对 MIT `LICENSE`、版权主体和 package metadata；
 3. 使用已确认的 GitHub repository `ericchiu-ca/FrameLedger-Public`；
 4. 确认 `SECURITY.md` 中的精确 PVR URL 与目标仓库一致；
-5. 创建候选首个本地 commit；
-6. 只有获得明确授权后才创建/推送 GitHub repository；
-7. 仓库变为 public 后立即启用并测试 PVR；
+5. 以 `1d7d37265ad96202649584153d2efa8389598d67` 创建公开 root commit；
+6. 在明确授权后创建并推送 `ericchiu-ca/FrameLedger-Public`；
+7. 启用 PVR，并在取得独立非协作者账号后补做实际提交/接收；
 8. Hosted CI、权利和人工 native gate 全部通过后再创建 `v0.1.0` tag。

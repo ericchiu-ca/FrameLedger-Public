@@ -4,9 +4,9 @@
 
 - `pyproject.toml`、`src/frameledger/__init__.py` 和 `uv.lock` 中的 package version 为 `0.1.0`；
 - 公开候选有意不继承私有仓库的 Git 历史；
-- 当前本地候选没有 commit、tag、GitHub Release 或生产部署；
+- 公开历史从 root commit `1d7d37265ad96202649584153d2efa8389598d67` 开始；当前没有 tag、GitHub Release 或生产部署；
 - 项目采用 MIT License，版权声明为 `Copyright (c) 2026 Eric Chiu`；
-- `SECURITY.md` 的 PVR URL 已绑定 `ericchiu-ca/FrameLedger-Public`，仍需在该仓库做端到端测试。
+- `SECURITY.md` 的 PVR URL 已绑定 `ericchiu-ca/FrameLedger-Public`；PVR 已启用且公开入口可见，独立非协作者提交/接收仍待验证。
 
 因此现状应称为 **`0.1.0` 尚未发布的 research preview 候选**。首个正式可追溯版本建议为 `v0.1.0`，但只能在全部发布门满足后创建 tag。
 
