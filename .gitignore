@@ -1,0 +1,37 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+
+# Local credentials and signing material must never enter Git.
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+
+# Source media and generated artifacts stay local.
+*.[mM][pP]4
+*.[mM][oO][vV]
+*.[mM][kK][vV]
+*.[mM]4[vV]
+*.[wW][eE][bB][mM]
+*.part
+*.PART
+*.wav
+*.m4a
+*.mp3
+*.safetensors
+*.npz
+*.gguf
+samples/
+outputs/
+.cache/
+.frameledger-imports/
+.frameledger-batches/

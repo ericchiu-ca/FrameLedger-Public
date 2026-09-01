@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+ASR_HELPER_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec "$ASR_HELPER_DIR/.venv/bin/python" "$ASR_HELPER_DIR/main.py"
